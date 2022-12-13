@@ -111,3 +111,6 @@ class City(NamedTuple):
                     yield from visit(neighbor)
 
         return visit(source)
+
+    def depth_first_search(graph, source, predicate, order_by=None):
+        return search(depth_first_traverse, graph, source, predicate, order_by)
