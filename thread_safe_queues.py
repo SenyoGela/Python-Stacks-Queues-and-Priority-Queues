@@ -2,7 +2,7 @@
 import argparse
 from queue import LifoQueue, PriorityQueue, Queue
 import threading
-from random import randint
+from random import choice, randint
 from time import sleep
 
 from itertools import zip_longest
