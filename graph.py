@@ -123,6 +123,7 @@ class City(NamedTuple):
             if predicate(node):
                 return node
 
+# Dijkstra's Algorithm Using a Priority Queue
     def dijkstra_shortest_path(graph, source, destination, weight_factory):
         previous = {}
         visited = set()
