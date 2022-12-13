@@ -3,6 +3,7 @@ from collections import deque
 from heapq import heappop, heappush
 from itertools import count
 
+# Refactoring the Code Using a Mixin Class
 class IterableMixin():
     def __len__(self):
         return len(self._elements)
@@ -11,6 +12,7 @@ class IterableMixin():
         while len(self) > 0:
             yield self.dequeue()
 
+# Building a Queue Data Type
 class Queue(IterableMixin):
     def __init__(self, *elements):
         self._elements = deque(elements)
@@ -21,10 +23,14 @@ class Queue(IterableMixin):
     def dequeue(self):
         return self._elements.popleft()
 
+# Building a Stack Data Type
 class Stack(Queue):
     def dequeue(self):
         return self._elements.pop()
 
+# Representing Priority Queues with a Heap
+# Building a Priority Queue Data Type
+# Handling Corner Cases in Your Priority Queue
 class PriorityQueue(IterableMixin):
     def __init__(self):
         self._elements = []
