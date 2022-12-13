@@ -70,3 +70,6 @@ class MutableMinHeap(IterableMixin):
 
     def __getitem__(self, unique_value):
         return self._elements_by_value[unique_value].priority
+
+    def dequeue(self):
+        return heappop(self._elements).value
