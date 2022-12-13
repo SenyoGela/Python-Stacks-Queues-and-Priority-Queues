@@ -84,6 +84,7 @@ class City(NamedTuple):
     def connected(graph, source, destination):
         return shortest_path(graph, source, destination) is not None
 
+# Depth-First Using a LIFO Queue
     def depth_first_traverse(graph, source, order_by=None):
         stack = Stack(source)
         visited = set()
