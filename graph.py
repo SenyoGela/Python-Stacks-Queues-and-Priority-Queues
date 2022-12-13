@@ -1,4 +1,5 @@
 # doesn't work because pygraphviz cannot be installed to load graphs =(
+# no DEMO
 
 from typing import NamedTuple
 import networkx as nx
