@@ -2,6 +2,7 @@
 
 from typing import NamedTuple
 import networkx as nx
+from queues import Queue
 
 # Object Representation of the Cities and Roads
 class City(NamedTuple):
