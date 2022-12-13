@@ -13,6 +13,7 @@ from rich.console import Group
 from rich.live import Live
 from rich.panel import Panel
 
+# Using Thread-Safe Queues
 QUEUE_TYPES = {
     "fifo": Queue,
     "lifo": LifoQueue,
