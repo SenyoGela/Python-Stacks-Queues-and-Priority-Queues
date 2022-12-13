@@ -42,3 +42,8 @@ class City(NamedTuple):
                 if neighbor not in visited:
                     visited.add(neighbor)
                     queue.enqueue(neighbor)
+
+    def breadth_first_search(graph, source, predicate):
+        for node in bread_first_traverse(graph, source):
+            if predicate(node):
+                return node
