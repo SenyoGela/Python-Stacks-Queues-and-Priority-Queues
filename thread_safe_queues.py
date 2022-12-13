@@ -6,6 +6,7 @@ from random import randint
 from time import sleep
 
 from itertools import zip_longest
+
 from rich.align import Align
 from rich.columns import Columns
 from rich.console import Group
@@ -82,3 +83,10 @@ class Worker(threading.Thread):
         for _ in range(100):
             sleep(delay / 100)
             self.progress += 1
+
+class View:
+    def __init__(self, buffer, producers, consumers):
+        self.buffer = buffer
+        self.producers = producers
+        self.consumers = consumers
+
