@@ -49,9 +49,7 @@ class City(NamedTuple):
                     queue.enqueue(neighbor)
 
     def breadth_first_search(graph, source, predicate, order_by=None):
-        for node in bread_first_traverse(graph, source, order_by):
-            if predicate(node):
-                return node
+        return search(breadth_first_traverse, graph, source, predicate, order_by)
 
 # Shortest Path Using Breadth-First Traversal
     def shortest_path(graph, source, destination, order_by=None):
