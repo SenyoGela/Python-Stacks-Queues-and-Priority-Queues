@@ -33,6 +33,7 @@ class City(NamedTuple):
             for name1, name2, weights in graph.edges(data=True)
         )
 
+# Breadth-First Using a FIFO Queue
     def breadth_first_traverse(graph, source, order_by=None):
         queue = Queue(source)
         visited = {source}
