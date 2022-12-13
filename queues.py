@@ -11,7 +11,7 @@ class IterableMixin():
         while len(self) > 0:
             yield self.dequeue()
 
-class Queue:
+class Queue(IterableMixin):
     def __init__(self, *elements):
         self._elements = deque(elements)
 
@@ -32,7 +32,7 @@ class Stack(Queue):
     def dequeue(self):
         return self._elements.pop()
 
-class PriorityQueue:
+class PriorityQueue(IterableMixin):
     def __init__(self):
         self._elements = []
         self._counter = count()
