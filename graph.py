@@ -1,7 +1,9 @@
+# doesn't work because pygraphviz cannot be installed to load graphs =(
 
 from typing import NamedTuple
 import networkx as nx
 
+# Object Representation of the Cities and Roads
 class City(NamedTuple):
     name: str
     country: str
@@ -29,3 +31,4 @@ class City(NamedTuple):
             (nodes[name1], nodes[name2], weights)
             for name1, name2, weights in graph.edges(data=True)
         )
+
