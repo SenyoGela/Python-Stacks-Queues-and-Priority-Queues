@@ -173,6 +173,16 @@ class Consumer(Worker):
             self.buffer.task_done()
             self.simulate_idle()
 
+#
+@dataclass(order=True)
+class Product:
+    priority: int
+    label: str = field(compare=False)
+
+    def __str__(self):
+        return self.label
+
+
 
 
 
