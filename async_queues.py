@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import sys
 from typing import NamedTuple
 
+# Using Asynchronous Queues
 async def main(args):
     session = aiohttp.ClientSession()
     try:
