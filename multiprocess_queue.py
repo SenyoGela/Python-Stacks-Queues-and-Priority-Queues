@@ -81,4 +81,20 @@ class Job:
             if hashed == hash_value:
                 return text_bytes.decode("utf-8")
 
+def main(args):
+    queue_in = multiprocessing.Queue()
+    queue_out = multiprocessing.Queue()
+
+    workers = [
+        Worker(queue_in, queue_out, args.hash_value)
+        for _ in range(args.num_workers)
+    ]
+
+    for worker in workers:
+        worker.start()
+
+    for text_length in range(1, args.max_length +1):
+        combinations = Combinations(ascii_lowercase, text_length)
+        for indices in chunk_indices(len(combinations), len(workers)):
+            queue_in.put(Job(combinations, *indices))
 
