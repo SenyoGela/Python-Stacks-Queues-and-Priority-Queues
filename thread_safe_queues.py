@@ -13,6 +13,9 @@ from rich.console import Group
 from rich.live import Live
 from rich.panel import Panel
 
+from dataclasses import dataclass, field
+from enum import IntEnum
+
 # Using Thread-Safe Queues
 QUEUE_TYPES = {
     "fifo": Queue,
