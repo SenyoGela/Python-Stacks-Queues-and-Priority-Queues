@@ -14,6 +14,7 @@ from typing import NamedTuple
 # Using Asynchronous Queues
 # asyncio.Queue
 # asyncio.LifoQueue
+# asyncio.PriorityQueue
 async def main(args):
     session = aiohttp.ClientSession()
     try:
