@@ -73,6 +73,10 @@ class Job(NamedTuple):
     url: str
     depth: int = 1
 
+    def __lt__(self, other):
+        if isinstance(other, Job):
+            return len(self.url) < len(other.url)
+
 async def worker(worker_id, session, queue, links, max_depth):
     print(f"[{worker_id} starting]", file=sys.stderr)
     while True:
