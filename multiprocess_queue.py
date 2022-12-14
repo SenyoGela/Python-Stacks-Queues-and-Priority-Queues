@@ -109,3 +109,6 @@ def parse_args():
         default=multiprocessing.cpu_count(),
     )
     return parser.parse_args()
+
+if __name__ == "__main__":
+    main(parse_args())
