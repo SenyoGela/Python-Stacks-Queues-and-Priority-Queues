@@ -136,7 +136,7 @@ class View:
         pairs = zip_longest(self.producers, self.consumers)
         for i, (producer, consumer) in enumerate(pairs, 1):
             left_panel = self.panel(producer, f"Producer {i}")
-            right_panel = self.panel(consumer, f"Consumer" {i})
+            right_panel = self.panel(consumer, f"Consumer {i}")
             rows.append(Columns([left_panel, right_panel], width=40))
         return Group(*rows)
 
@@ -149,6 +149,7 @@ class View:
         )
         return Panel(align, height=5, title=title)
 
+# queue.Queue
 class Producer(Worker):
     def __init__(self, speed, buffer, products):
         super().__init__(speed, buffer)
