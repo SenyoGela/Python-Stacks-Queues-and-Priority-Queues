@@ -1,3 +1,4 @@
+# no DEMO =(
 
 import argparse
 from queue import LifoQueue, PriorityQueue, Queue
@@ -167,7 +168,7 @@ def main(args):
     ]
     consumers = [
         Consumer(args.consumer_speed, buffer)
-        for _ in range(args.cosumers)
+        for _ in range(args.consumers)
     ]
 
     for producer in producers:
