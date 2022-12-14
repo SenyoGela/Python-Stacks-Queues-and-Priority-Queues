@@ -12,6 +12,7 @@ import sys
 from typing import NamedTuple
 
 # Using Asynchronous Queues
+# asyncio.Queue
 async def main(args):
     session = aiohttp.ClientSession()
     try:
