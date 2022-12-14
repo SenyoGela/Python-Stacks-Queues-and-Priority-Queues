@@ -66,3 +66,9 @@ class Worker(multiprocessing.Process):
             if plaintext := job(self.hash_value):
                 self.queue_out.put(plaintext)
                 break
+
+@dataclass(frozen=True)
+class Job:
+    combinations: Combinations
+    start_index: int
+    stop_index: int
