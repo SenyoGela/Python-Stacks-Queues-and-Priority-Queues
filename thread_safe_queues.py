@@ -174,7 +174,7 @@ class Consumer(Worker):
             self.buffer.task_done()
             self.simulate_idle()
 
-#
+# queue.PriorityQueue
 @dataclass(order=True)
 class Product:
     priority: int
