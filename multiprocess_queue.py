@@ -10,7 +10,7 @@ import argparse
 import queue
 import time
 
-#
+# Killing a Worker With the Poison Pill
 POISON_PILL = None
 
 # Reversing an MD5 Hash on a Single Thread
