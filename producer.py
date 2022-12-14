@@ -17,3 +17,10 @@ with pika.BlockingConnection() as connection:
         )
 
 # Apache Kafka: kafka-python3
+producer = KafkaProducer(bootstrap_servers="localhost:9092")
+while True:
+    message = input("Message: ")
+    producer.send(
+        topic="datascience",
+        value=message.encode("utf-8"),
+    )
