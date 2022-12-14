@@ -1,7 +1,8 @@
-# RabbitMQ: pika
 
 import pika
+from kafka import KafkaConsumer
 
+# RabbitMQ: pika
 QUEUE_NAME = "mailbox"
 
 def callback(channel, method, properties, body):
@@ -17,3 +18,5 @@ with pika.BlockingConnection() as connection:
         on_message_callback=callback
     )
     channel.start_consuming()
+
+# Apache Kafka: kafka-python3
