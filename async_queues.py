@@ -8,6 +8,9 @@ import aiohttp
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
+import sys
+from typing import NamedTuple
+
 async def main(args):
     session = aiohttp.ClientSession()
     try:
@@ -41,3 +44,4 @@ def parse_links(url, html):
         href = anchor.get("href").lower()
         if not href.startswith("javascript:"):
             yield urljoin(url, href)
+
