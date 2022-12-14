@@ -1,9 +1,10 @@
-# RabbitMQ: pika
 
 import pika
+from kafka import KafkaProducer
 
 QUEUE_NAME = "mailbox"
 
+# RabbitMQ: pika
 with pika.BlockingConnection() as connection:
     channel = connection.channel()
     channel.queue_declare(queue=QUEUE_NAME)
@@ -14,3 +15,5 @@ with pika.BlockingConnection() as connection:
             routing_key=QUEUE_NAME,
             body=message.encode("utf-8")
         )
+
+# Apache Kafka: kafka-python3
