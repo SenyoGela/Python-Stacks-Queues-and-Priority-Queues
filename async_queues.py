@@ -45,3 +45,7 @@ def parse_links(url, html):
         if not href.startswith("javascript:"):
             yield urljoin(url, href)
 
+class Job(NamedTuple):
+    url: str
+    depth: int = 1
+
