@@ -10,6 +10,9 @@ import argparse
 import queue
 import time
 
+#
+POISON_PILL = None
+
 # Reversing an MD5 Hash on a Single Thread
 def reverse_md5(hash_value, alphabet=ascii_lowercase, max_length=6):
     for length in range(1, max_length + 1):
