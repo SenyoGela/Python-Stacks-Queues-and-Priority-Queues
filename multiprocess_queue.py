@@ -55,7 +55,7 @@ class Combinations:
             for i in reversed(range(self.length))
         )
 
-#
+# Communicating in Full-Duplex Mode
 class Worker(multiprocessing.Process):
     def __init__(self, queue_in, queue_out, hash_value):
         super().__init__(daemon=True)
