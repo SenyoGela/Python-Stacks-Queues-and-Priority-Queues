@@ -50,3 +50,11 @@ class Combinations:
             ]
             for i in reversed(range(self.length))
         )
+
+#
+class Worker(multiprocessing.Process):
+    def __init__(self, queue_in, queue_out, hash_value):
+        super().__init__(daemon=True)
+        self.queue_in = queue_in
+        self.queue_out = queue_out
+        self.hash_value = hash_value
